@@ -3,20 +3,19 @@ pipeline {
 
     environment {
         GIT_BRANCH = 'main'
-        GIT_REPOSITORY_URL = 'https://github.com/winter-blog/discovery-service.git'
+        GIT_REPOSITORY_URL = 'https://github.com/donghun-blog/discovery-service.git'
 
-
-        repository = "alswn4516/winter-blog-discovery-service"
+        repository = "alswn4516/donghun-blog-discovery-service"
         DOCKERHUB_CREDENTIALS = credentials('docker_hub_user_credential')
-        DOCKER_CONTAINER_NAME = 'winter-blog-discovery-service'
+        DOCKER_CONTAINER_NAME = 'donghun-blog-discovery-service'
 
         PROFILE='-e "SPRING_PROFILES_ACTIVE=prod"'
         EXTERNAL_PORT = 8761
         INTERNAL_PORT = 8761
         
-        SSH_CMD = 'ssh -i /var/lib/jenkins/.ssh/jenkins.pem ubuntu@3.39.159.26'
+        SSH_CMD = 'ssh -i /var/lib/jenkins/.ssh/donghun.pem ubuntu@15.164.15.10'
         ENV_FILE = '--env-file=./env/discovery-service.env'
-        NETWORK = '--net winter-blog-network'
+        NETWORK = '--net donghun-blog-network'
 
         DISCORD_WEBHOOK_URL = credentials("discord_webhook")
     }
